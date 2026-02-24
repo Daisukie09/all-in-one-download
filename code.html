@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Universal Video Downloader - Save Content Legally</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">movie_filter</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Universal <span class="text-primary">Video</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#how-it-works">How it Works</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">API</a>
+</nav>
+<div class="flex items-center gap-4"><button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" id="theme-toggle">
+<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                        Get Started
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-24 pb-24 lg:pt-32 lg:pb-40 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6 tracking-wide uppercase">
+<span class="material-symbols-outlined text-sm">verified_user</span> 
+                    100% Secure &amp; Compliant
+                </div>
+<h1 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] mb-6 max-w-4xl mx-auto">
+                    Save the content you love, <span class="text-primary">legally.</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto">
+                    A secure, compliant, and lightning-fast video downloader supporting YouTube, TikTok, Instagram, and more.
+                </p>
+<!-- URL Input Group -->
+<div class="max-w-3xl mx-auto mb-12">
+<div class="relative group p-1.5 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 flex items-center transition-all focus-within:ring-4 focus-within:ring-primary/10 focus-within:border-primary">
+<div class="pl-4 text-slate-400 flex items-center gap-2">
+<span class="material-symbols-outlined">link</span>
+<span class="hidden sm:inline text-xs font-bold uppercase tracking-wider opacity-50">Paste</span>
+</div>
+<input class="w-full border-none focus:ring-0 bg-transparent text-slate-900 dark:text-white py-4 px-4 text-lg placeholder:text-slate-400 font-medium" placeholder="Paste video URL here (e.g., https://youtube.com/watch?v=...)" type="text"/>
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center gap-2 mr-1 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95"><span>Download Video</span>
+<span class="material-symbols-outlined">download</span></button>
+</div>
+</div>
+<!-- Platform Icons -->
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2" title="YouTube Support">
+<span class="material-symbols-outlined text-red-600">play_circle</span>
+<span class="font-bold text-slate-700 dark:text-slate-300">YouTube</span>
+</div>
+<div class="flex items-center gap-2" title="TikTok Support">
+<span class="material-symbols-outlined text-cyan-500">music_video</span>
+<span class="font-bold text-slate-700 dark:text-slate-300">TikTok</span>
+</div>
+<div class="flex items-center gap-2" title="Instagram Support">
+<span class="material-symbols-outlined text-pink-500">photo_camera</span>
+<span class="font-bold text-slate-700 dark:text-slate-300">Instagram</span>
+</div>
+<div class="flex items-center gap-2" title="X (Twitter) Support">
+<span class="material-symbols-outlined text-slate-900 dark:text-white text-lg font-black">crossword</span>
+<span class="font-bold text-slate-700 dark:text-slate-300">X / Twitter</span>
+</div>
+<div class="flex items-center gap-2" title="Vimeo Support">
+<span class="material-symbols-outlined text-blue-400">videocam</span>
+<span class="font-bold text-slate-700 dark:text-slate-300">Vimeo</span>
+</div>
+</div>
+</div>
+<!-- Abstract background shape -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0 opacity-20 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
+</div>
+</section>
+<!-- Preview Area -->
+<section class="pb-24">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 px-4">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Live Preview</h2>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row">
+<!-- Video Thumbnail -->
+<div class="md:w-1/2 relative group aspect-video">
+<img class="w-full h-full object-cover" data-alt="High quality nature drone shot thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALOWLVHsN-fi5Rd1BN5vz9LMehjiPBLg4N63VFuVUVGr68FeFP2IYDZGntCiqRtJwefq-2PWdpVVXcw2S8eflpXbFde-W0dGAJoPVcT4q0M1t8bMQvLOKdNRRcEqqWLGQlCKBLmQTs9XfwTrAZXH4gJNXWBr9BOM7qVB8vZRcKTXjsrYivv6YbE7Zov6agfYqZ2yqwim5zvyuheA75ZfQp_6eH25-cUnhX6WFo80SUq6zZtJHtalXMPTk0n4iJ8n9BA8X52xt8KMw6"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+<div class="bg-white/20 backdrop-blur-sm p-4 rounded-full border border-white/30 text-white">
+<span class="material-symbols-outlined text-4xl">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded">
+                                03:45
+                            </div>
+</div>
+<!-- Info Area -->
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">YouTube</span>
+<span class="text-slate-400 text-xs">2s ago</span>
+</div>
+<div class="flex items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 dark:text-emerald-400 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-xs">verified</span>
+Verified Compliance
+</div>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 leading-tight">Epic Nature Drone Shots - 4K Cinematic Relaxation</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Ready to download. Selection: <span class="text-primary font-semibold">1080p Full HD</span></p>
+</div>
+<div class="space-y-4">
+<div class="flex gap-3 items-end">
+<div class="flex-1">
+<label class="block text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] mb-2 ml-1">Format &amp; Quality</label>
+<div class="relative">
+<select class="w-full appearance-none bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-700 dark:text-slate-300 font-medium focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+<option value="1080">1080p Full HD (MP4)</option>
+<option value="720">720p HD (MP4)</option>
+<option value="480">480p SD (MP4)</option>
+<option value="audio">Audio Only (MP3)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">unfold_more</span>
+</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-3 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl transition-all hover:bg-primary/90 hover:scale-[1.01] active:scale-[0.98] shadow-xl shadow-primary/20 flex items-center justify-center gap-3">
+<span>Download Now</span>
+<span class="material-symbols-outlined text-xl">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 bg-white dark:bg-slate-900/50 dark:bg-slate-900/40" id="how-it-works">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">How it Works</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Get your favorite videos in three simple, legal steps.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-12"><div class="flex flex-col items-center text-center group">
+<div class="size-20 rounded-3xl bg-primary/5 text-primary flex items-center justify-center mb-6 transition-all group-hover:bg-primary group-hover:text-white shadow-inner">
+<span class="material-symbols-outlined text-4xl">content_paste</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">1. Paste URL</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Copy the link of the video you want to save from any supported platform.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="size-20 rounded-3xl bg-primary/5 text-primary flex items-center justify-center mb-6 transition-all group-hover:bg-primary group-hover:text-white shadow-inner">
+<span class="material-symbols-outlined text-4xl">visibility</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">2. Preview</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">We'll instantly detect the video and show you all available quality options.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="size-20 rounded-3xl bg-primary/5 text-primary flex items-center justify-center mb-6 transition-all group-hover:bg-primary group-hover:text-white shadow-inner">
+<span class="material-symbols-outlined text-4xl">download_done</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">3. Download</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Save it directly to your device or export it to your preferred cloud storage.</p>
+</div></div>
+</div>
+</section>
+<!-- Trust / Legal Section -->
+<section class="py-12 border-y border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Trusted by Digital Creators Worldwide</p>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">rocket_launch</span>
+<span class="font-black text-xl tracking-tighter">CREATOR.IO</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">auto_awesome</span>
+<span class="font-black text-xl tracking-tighter">STUDIO.NET</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">stream</span>
+<span class="font-black text-xl tracking-tighter">VLOG_HQ</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">category</span>
+<span class="font-black text-xl tracking-tighter">EDITOR_X</span>
+</div>
+</div>
+</div>
+</section><section class="py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[2rem] p-8 md:p-16 shadow-2xl relative overflow-hidden shadow-primary/5 dark:shadow-none"><div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+<span class="material-symbols-outlined text-primary text-5xl mb-4">gavel</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Commitment to Compliance</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        Universal Video Downloader is built with strict adherence to digital rights and legal frameworks. We do not store downloaded content on our servers, ensuring your privacy and respecting original creator rights.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12"><div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">movie_filter</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Universal <span class="text-primary">Video</span></h1>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+The world's most trusted, high-performance video downloading tool for personal and legal use.
+</p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-[10px]">Product</h4>
+<ul class="space-y-4">
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">extension</span> Browser Extension</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">api</span> API Reference</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">list_alt</span> Supported Sites</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-[10px]">Legal &amp; Safety</h4>
+<ul class="space-y-4">
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">DMCA Compliance</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Safety Report</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-[10px]">Support</h4>
+<ul class="space-y-4">
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="size-2 rounded-full bg-emerald-500"></span> System Status</a></li>
+</ul>
+</div></div>
+<div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 Universal Video Downloader Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script></body></html>

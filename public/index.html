@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Video Downloader - YouTube, TikTok, Instagram & More</title>
+  <meta name="description" content="Download videos from YouTube, TikTok, Instagram, Facebook, Twitter and more. Free online video downloader for all platforms." />
+  <link rel="canonical" href="/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Social Media Video Downloader" />
+  <meta property="og:description" content="Download videos from YouTube, TikTok, Instagram, Facebook, Twitter and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/" />
+  <meta property="og:image" content="/og.svg" />
+  <meta name="theme-color" content="#1152d4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Social Media Video Downloader","url":"/","applicationCategory":"Utilities","operatingSystem":"All"}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400..700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/styles.css" />
+  <!-- Shared Components (Header, Footer, Theme Toggle) -->
+  <script src="/components.js"></script>
+  <script>(function(){var GA='__GA_ID__';if(GA&&GA!=='__GA_ID__'){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA);}})();</script>
+  <script>(function(){var ADS='__ADSENSE_CLIENT__';if(ADS&&ADS!=='__ADSENSE_CLIENT__'){var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+ADS;document.head.appendChild(s);}})();</script>
+</head>
+<body>
+  <!-- Header is loaded from components.js -->
+
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <div class="badge"><span class="material-symbols-outlined icon" aria-hidden="true">download</span> Free Online Downloader</div>
+        <h1 class="title">Download videos from all social media platforms <span class="no-watermark-badge">No Watermark</span></h1>
+        <p class="subtitle">Support for YouTube, TikTok, Instagram, Facebook, Twitter/X and more. Fast, free and easy to use. Download videos without watermark.</p>
+
+        <div class="form-wrap">
+          <form id="dl-form" class="form" autocomplete="off">
+            <div class="leading"><span class="material-symbols-outlined icon" aria-hidden="true">link</span><span class="visually-hidden">Paste URL</span></div>
+            <input id="url" name="url" type="url" required class="input" placeholder="Paste video URL (YouTube, TikTok, Instagram, Facebook, Twitter...)" />
+            <button id="download-btn" type="submit" class="btn btn-primary">
+              <span id="btn-label">Download</span>
+              <span id="btn-spinner" class="hidden material-symbols-outlined icon" aria-hidden="true">progress_activity</span>
+            </button>
+          </form>
+          <div id="msg" class="msg" role="status" aria-live="polite"></div>
+          <div id="platform-badge" class="platform-badge hidden"></div>
+          <div id="download-progress" class="download-progress hidden">
+            <div class="progress-spinner"></div>
+            <p class="progress-text">Downloading... Please wait!</p>
+            <p class="progress-subtext">Your video is being downloaded</p>
+          </div>
+          
+          <!-- Video Preview Card -->
+          <div id="video-preview" class="video-preview hidden">
+            <div class="preview-card">
+              <div class="preview-thumbnail">
+                <img id="preview-img" src="" alt="Video thumbnail" />
+                <span id="preview-duration" class="preview-duration"></span>
+              </div>
+              <div class="preview-info">
+                <h3 id="preview-title" class="preview-title"></h3>
+                <p id="preview-uploader" class="preview-uploader"></p>
+                <div class="quality-select-wrap">
+                  <label for="quality-select">Select Quality:</label>
+                  <select id="quality-select" class="quality-select">
+                    <option value="">Loading...</option>
+                  </select>
+                </div>
+                <button id="preview-download-btn" class="btn btn-primary preview-download-btn">
+                  <span class="material-symbols-outlined icon" aria-hidden="true">download</span>
+                  Download
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <p class="hint">By using this tool you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+      </div>
+    </section>
+
+    <section id="supported-platforms" class="section platforms">
+      <div class="container">
+        <h2 class="section-title">Supported Platforms</h2>
+        <div class="platform-grid">
+          <div class="platform-card">
+            <span class="platform-icon youtube">▶</span>
+            <span class="platform-name">YouTube</span>
+            <span class="platform-label">Shorts & Long</span>
+          </div>
+          <div class="platform-card">
+            <span class="platform-icon tiktok">♪</span>
+            <span class="platform-name">TikTok</span>
+            <span class="platform-label">Videos</span>
+          </div>
+          <div class="platform-card">
+            <span class="platform-icon instagram">◎</span>
+            <span class="platform-name">Instagram</span>
+            <span class="platform-label">Reels & Posts</span>
+          </div>
+          <div class="platform-card">
+            <span class="platform-icon facebook">f</span>
+            <span class="platform-name">Facebook</span>
+            <span class="platform-label">Videos</span>
+          </div>
+          <div class="platform-card">
+            <span class="platform-icon twitter">𝕏</span>
+            <span class="platform-name">Twitter/X</span>
+            <span class="platform-label">Videos</span>
+          </div>
+          <div class="platform-card">
+            <span class="platform-icon direct">⬇</span>
+            <span class="platform-name">Direct URL</span>
+            <span class="platform-label">Any Link</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Copy Video URL</h3>
+              <p>Copy the video link from YouTube, TikTok, Instagram, Facebook, Twitter or any supported platform.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Paste URL</h3>
+              <p>Paste the video URL into the input box above and click Download.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Download Video</h3>
+              <p>Your video will be downloaded directly to your device. Fast and free!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer is loaded from components.js -->
+
+  <!-- Page-specific JavaScript for download form -->
+  <script>
+  (function(){
+    const form = document.getElementById('dl-form');
+    const msg = document.getElementById('msg');
+    const platformBadge = document.getElementById('platform-badge');
+    const downloadProgress = document.getElementById('download-progress');
+    const videoPreview = document.getElementById('video-preview');
+    const btn = document.getElementById('download-btn');
+    const label = document.getElementById('btn-label');
+    const spinner = document.getElementById('btn-spinner');
+
+    const platformNames = {
+      youtube: 'YouTube',
+      tiktok: 'TikTok',
+      instagram: 'Instagram',
+      facebook: 'Facebook',
+      twitter: 'Twitter/X',
+      snapchat: 'Snapchat',
+      reddit: 'Reddit',
+      pinterest: 'Pinterest',
+      linkedin: 'LinkedIn',
+      direct: 'Direct URL'
+    };
+
+    const platformColors = {
+      youtube: '#FF0000',
+      tiktok: '#00f2ea',
+      instagram: '#E1306C',
+      facebook: '#4267B2',
+      twitter: '#1DA1F2',
+      snapchat: '#FFFC00',
+      reddit: '#FF5700',
+      pinterest: '#BD081C',
+      linkedin: '#0077B5',
+      direct: '#1152d4'
+    };
+
+    let currentUrl = '';
+    let videoInfo = null;
+
+async function getVideoInfo(url){
+      try {
+        const r = await fetch('/api/info?url=' + encodeURIComponent(url));
+        const contentType = r.headers.get('content-type');
+        
+        if (!contentType || !contentType.includes('application/json')) {
+          // Server returned non-JSON response
+          const text = await r.text();
+          console.error('Server returned non-JSON response:', text);
+          return { 
+            ok: false, 
+            error: 'Server error: Invalid response',
+            detail: 'yt-dlp may not be installed. Please check server logs.',
+            hint: 'Install yt-dlp: pip install yt-dlp'
+          };
+        }
+        
+        const data = await r.json();
+        
+        // If the response indicates an error, include the hint if available
+        if (!data.ok && data.hint) {
+          data.error = data.error + '. ' + data.hint;
+        }
+        
+        return data;
+      } catch (err) {
+        console.error('Fetch error:', err);
+        return { 
+          ok: false, 
+          error: 'Network error: Could not connect to server',
+          detail: err.message
+        };
+      }
+    }
+
+    function formatDuration(seconds) {
+      if (!seconds) return '';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function formatFileSize(bytes) {
+      if (!bytes) return '';
+      const mb = bytes / (1024 * 1024);
+      if (mb >= 1) return `${mb.toFixed(1)} MB`;
+      const kb = bytes / 1024;
+      return `${kb.toFixed(1)} KB`;
+    }
+
+    function showVideoPreview(info) {
+      videoInfo = info;
+      const previewImg = document.getElementById('preview-img');
+      const previewDuration = document.getElementById('preview-duration');
+      const previewTitle = document.getElementById('preview-title');
+      const previewUploader = document.getElementById('preview-uploader');
+      const qualitySelect = document.getElementById('quality-select');
+      
+      previewImg.src = info.thumbnail || '';
+      previewDuration.textContent = formatDuration(info.duration);
+      previewTitle.textContent = info.title || 'Untitled';
+      previewUploader.textContent = info.uploader || '';
+      
+      // Populate quality options
+      qualitySelect.innerHTML = '';
+      if (info.availableQualities && info.availableQualities.length > 0) {
+        info.availableQualities.forEach((q, index) => {
+          const option = document.createElement('option');
+          option.value = q.format_id;
+          option.textContent = `${q.quality} (${q.ext}) - ${formatFileSize(q.filesize)}`;
+          if (index === 0) option.selected = true;
+          qualitySelect.appendChild(option);
+        });
+      } else {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'Best Quality (Auto)';
+        qualitySelect.appendChild(option);
+      }
+      
+      videoPreview.classList.remove('hidden');
+      downloadProgress.classList.add('hidden');
+      platformBadge.classList.add('hidden');
+      msg.classList.add('hidden');
+    }
+
+    // Preview download button click
+    document.getElementById('preview-download-btn').addEventListener('click', function() {
+      if (!currentUrl || !videoInfo) return;
+      
+      const qualitySelect = document.getElementById('quality-select');
+      const formatId = qualitySelect.value;
+      
+      let downloadUrl = '/api/download?url=' + encodeURIComponent(currentUrl);
+      if (formatId) {
+        downloadUrl += '&format_id=' + encodeURIComponent(formatId);
+      }
+      
+      // Hide video preview and show download progress
+      downloadProgress.classList.remove('hidden');
+      videoPreview.classList.add('hidden');
+      
+      // Show success message
+      const progressText = downloadProgress.querySelector('.progress-text');
+      const progressSubtext = downloadProgress.querySelector('.progress-subtext');
+      progressText.textContent = 'Download Started!';
+      progressText.style.color = '#22c55e';
+      progressSubtext.textContent = 'Your video is being downloaded. Check your downloads folder.';
+      
+      // Start the download
+      window.location.href = downloadUrl;
+      
+      // Reset UI after a few seconds and show completion message
+      setTimeout(function() {
+        downloadProgress.classList.add('hidden');
+        msg.classList.remove('hidden');
+        msg.textContent = 'Download complete! Check your downloads folder.';
+        msg.style.color = '#22c55e';
+        msg.style.backgroundColor = '#dcfce7';
+        msg.style.padding = '12px';
+        msg.style.borderRadius = '8px';
+      }, 5000);
+    });
+
+    if (form){
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        currentUrl = new FormData(form).get('url');
+        
+        msg.textContent = 'Getting video info...';
+        platformBadge.classList.add('hidden');
+        videoPreview.classList.add('hidden');
+        
+        try{ 
+          const u = new URL(currentUrl); 
+          if (!/^https?:$/.test(u.protocol)) throw new Error(); 
+        } catch { 
+          msg.textContent = 'Invalid URL'; 
+          return; 
+        }
+        
+        btn.disabled = true; 
+        label.classList.add('hidden'); 
+        spinner.classList.remove('hidden');
+        
+        try{
+          const info = await getVideoInfo(currentUrl);
+          
+          if (!info.ok){
+            msg.textContent = info.error || 'Failed to get video info';
+          } else {
+            showVideoPreview(info);
+          }
+        } catch(err){
+          msg.textContent = 'Error: ' + (err.message || 'Unexpected error. Try again.'); 
+        }
+        finally{ 
+          setTimeout(()=>{ 
+            btn.disabled = false; 
+            label.classList.remove('hidden'); 
+            spinner.classList.add('hidden'); 
+          }, 3000); 
+        }
+      });
+    }
+
+    try { if (window.adsbygoogle) { (adsbygoogle = window.adsbygoogle || []).push({}); } } catch(_) {}
+  })();
+  </script>
+</body>
+</html>

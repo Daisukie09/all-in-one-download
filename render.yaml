@@ -1,0 +1,11 @@
+﻿services:
+  - type: web
+    name: safe-video-downloader
+    env: node
+    plan: free
+    buildCommand: "true"
+    startCommand: "node src/server.js"
+    healthCheckPath: "/"
+    envVars:
+      - key: PORT
+        value: 3000
