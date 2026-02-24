@@ -1,16 +1,32 @@
-﻿{
+{
   "name": "social-media-video-downloader",
   "version": "1.0.0",
   "private": true,
   "type": "commonjs",
-  "engines": { "node": ">=18" },
-  "scripts": {
-    "start": "node src/server.js",
-    "dev": "node --watch src/server.js"
+  "engines": {
+    "node": ">=18"
   },
+  "scripts": {
+  "start": "node src/server.js",
+  "dev": "node --watch src/server.js"
+},
   "dependencies": {
-    "ytdl-core": "^4.11.5",
     "axios": "^1.6.2",
-    "cheerio": "^1.0.0-rc.12"
-  }
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^5.2.1",
+    "ytdl-core": "^4.11.5"
+  },
+  "description": "A minimal web app to download videos you own or are licensed to use. It does not bypass DRM, and it blocks popular platforms whose ToS prohibit downloading.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fakhar077/downloader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fakhar077/downloader/issues"
+  },
+  "homepage": "https://github.com/fakhar077/downloader#readme"
 }
