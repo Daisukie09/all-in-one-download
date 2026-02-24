@@ -30,9 +30,11 @@ const PORT = Number(process.env.PORT || 3000);
 const GA_ID = process.env.GA_MEASUREMENT_ID || '';
 const ADS_CLIENT = process.env.ADSENSE_CLIENT_ID || '';
 
-// Path to yt-dlp
-const YTDLP_PATH = process.env.YTDLP_PATH || path.join(__dirname, '..', '.venv', 'Scripts', 'yt-dlp.exe');
-const PYTHON_PATH = process.env.PYTHON_PATH || path.join(__dirname, '..', '.venv', 'Scripts', 'python.exe');
+// Path to yt-dlp - check environment variable first, then try common Linux paths
+const YTDLP_PATH = process.env.YTDLP_PATH || 
+  (process.platform === 'win32' ? path.join(__dirname, '..', '.venv', 'Scripts', 'yt-dlp.exe') : 'yt-dlp');
+const PYTHON_PATH = process.env.PYTHON_PATH || 
+  (process.platform === 'win32' ? path.join(__dirname, '..', '.venv', 'Scripts', 'python.exe') : 'python3');
 
 // Platform detection
 function detectPlatform(url) {
@@ -100,15 +102,23 @@ function contentTypeFor(p){
 
 // Check if yt-dlp is available
 function isYtDlpAvailable() {
+  // Try direct yt-dlp command first (works on Linux/Mac where it's in PATH)
   try {
-    execSync(`"${YTDLP_PATH}" --version`, { stdio: 'ignore', timeout: 5000, windowsHide: true });
-    return true;
+    execSync('yt-dlp --version', { stdio: 'ignore', timeout: 5000, windowsHide: true });
+    return { available: true, method: 'direct' };
   } catch (e) {
+    // Try the configured path (Windows or custom install)
     try {
-      execSync(`"${PYTHON_PATH}" -m yt_dlp --version`, { stdio: 'ignore', timeout: 5000, windowsHide: true });
-      return true;
+      execSync(`"${YTDLP_PATH}" --version`, { stdio: 'ignore', timeout: 5000, windowsHide: true });
+      return { available: true, method: 'custom' };
     } catch (e2) {
-      return false;
+      // Try Python module as fallback
+      try {
+        execSync(`"${PYTHON_PATH}" -m yt_dlp --version`, { stdio: 'ignore', timeout: 5000, windowsHide: true });
+        return { available: true, method: 'python' };
+      } catch (e3) {
+        return { available: false, method: 'none' };
+      }
     }
   }
 }
@@ -134,6 +144,7 @@ async function downloadWithYtDlp(url, res, platform, formatId) {
     }
 
     const hasFFmpeg = isFFmpegAvailable();
+    const ytDlpCheck = isYtDlpAvailable();
     
     // Use format based on FFmpeg availability and formatId
     let formatArg;
@@ -148,18 +159,43 @@ async function downloadWithYtDlp(url, res, platform, formatId) {
       formatArg = 'best[ext=mp4]/best';
     }
 
-    const args = [
-      '-f', formatArg,
-      '-o', outputFile,
-      '--no-playlist',
-      '--no-warnings',
-      url
-    ];
+    // Build args based on which method is available
+    let args, ytDlpCmd;
+    if (ytDlpCheck.method === 'direct') {
+      ytDlpCmd = 'yt-dlp';
+      args = [
+        '-f', formatArg,
+        '-o', outputFile,
+        '--no-playlist',
+        '--no-warnings',
+        url
+      ];
+    } else if (ytDlpCheck.method === 'custom') {
+      ytDlpCmd = YTDLP_PATH;
+      args = [
+        '-f', formatArg,
+        '-o', outputFile,
+        '--no-playlist',
+        '--no-warnings',
+        url
+      ];
+    } else {
+      // Fallback to python module
+      ytDlpCmd = PYTHON_PATH;
+      args = [
+        '-m', 'yt_dlp',
+        '-f', 'best[ext=mp4]/best',
+        '-o', outputFile,
+        '--no-playlist',
+        '--no-warnings',
+        url
+      ];
+    }
 
-    console.log(`Running yt-dlp with args: ${args.join(' ')}`);
+    console.log(`Running yt-dlp (${ytDlpCheck.method}) with args: ${args.join(' ')}`);
     console.log(`FFmpeg available: ${hasFFmpeg}`);
 
-    const ytProc = spawn(YTDLP_PATH, args, { 
+    const ytProc = spawn(ytDlpCmd, args, { 
       stdio: ['ignore', 'pipe', 'pipe'],
       windowsHide: true 
     });
@@ -330,6 +366,15 @@ async function handleInfo(req, res) {
   }
   
   const platform = detectPlatform(targetRaw);
+  const ytDlpCheck = isYtDlpAvailable();
+  
+  if (!ytDlpCheck.available) {
+    return sendJSON(res, 500, { 
+      ok: false, 
+      error: 'yt-dlp is not available',
+      hint: 'Please install yt-dlp: pip install yt-dlp'
+    });
+  }
   
   return new Promise((resolve) => {
     const tempDir = path.join(__dirname, '..', 'temp');
@@ -337,7 +382,17 @@ async function handleInfo(req, res) {
       fs.mkdirSync(tempDir, { recursive: true });
     }
     
-    const args = [
+    // Build args based on which method is available
+    let ytDlpCmd, args;
+    if (ytDlpCheck.method === 'direct') {
+      ytDlpCmd = 'yt-dlp';
+    } else if (ytDlpCheck.method === 'custom') {
+      ytDlpCmd = YTDLP_PATH;
+    } else {
+      ytDlpCmd = PYTHON_PATH;
+    }
+    
+    args = [
       '--dump-json',
       '--no-playlist',
       '--no-warnings',
@@ -346,7 +401,7 @@ async function handleInfo(req, res) {
     ];
 
     let stderr = '';
-    const ytProc = spawn(YTDLP_PATH, args, { 
+    const ytProc = spawn(ytDlpCmd, args, { 
       stdio: ['ignore', 'pipe', 'pipe'],
       windowsHide: true 
     });
@@ -449,9 +504,9 @@ async function handleFormats(req, res) {
   }
   
   const platform = detectPlatform(targetRaw);
-  const ytDlpAvailable = isYtDlpAvailable();
+  const ytDlpCheck = isYtDlpAvailable();
   
-  if (!ytDlpAvailable) {
+  if (!ytDlpCheck.available) {
     return sendJSON(res, 500, { 
       ok: false, 
       error: 'yt-dlp is not available',
@@ -460,7 +515,17 @@ async function handleFormats(req, res) {
   }
   
   return new Promise((resolve) => {
-    const args = [
+    // Build args based on which method is available
+    let ytDlpCmd, args;
+    if (ytDlpCheck.method === 'direct') {
+      ytDlpCmd = 'yt-dlp';
+    } else if (ytDlpCheck.method === 'custom') {
+      ytDlpCmd = YTDLP_PATH;
+    } else {
+      ytDlpCmd = PYTHON_PATH;
+    }
+    
+    args = [
       '--dump-json',
       '--no-playlist',
       '--no-warnings',
@@ -469,7 +534,7 @@ async function handleFormats(req, res) {
     ];
 
     let stderr = '';
-    const ytProc = spawn(YTDLP_PATH, args, { 
+    const ytProc = spawn(ytDlpCmd, args, { 
       stdio: ['ignore', 'pipe', 'pipe'],
       windowsHide: true 
     });
@@ -551,10 +616,10 @@ async function handleCheck(req, res) {
   }
   
   const platform = detectPlatform(targetRaw);
-  const ytDlpAvailable = isYtDlpAvailable();
+  const ytDlpCheck = isYtDlpAvailable();
   const ffmpegAvailable = isFFmpegAvailable();
   
-  if (!ytDlpAvailable) {
+  if (!ytDlpCheck.available) {
     return sendJSON(res, 200, { 
       ok: false,
       platform,
@@ -570,9 +635,9 @@ async function handleCheck(req, res) {
     ok: true, 
     platform,
     url: targetRaw,
-    ytDlp: ytDlpAvailable,
+    ytDlp: ytDlpCheck.available,
     ffmpeg: ffmpegAvailable,
-    message: `Detected platform: ${platform}. yt-dlp: ${ytDlpAvailable ? 'available' : 'not found'}, FFmpeg: ${ffmpegAvailable ? 'available' : 'not found'}`
+    message: `Detected platform: ${platform}. yt-dlp: ${ytDlpCheck.method} method, FFmpeg: ${ffmpegAvailable ? 'available' : 'not found'}`
   });
 }
 
@@ -594,12 +659,12 @@ async function handleDownload(req, res) {
     }
 
     const platform = detectPlatform(targetRaw);
-    const ytDlpAvailable = isYtDlpAvailable();
+    const ytDlpCheck = isYtDlpAvailable();
     
-    console.log(`Download request for ${platform}: ${targetRaw} (yt-dlp: ${ytDlpAvailable}, format: ${formatId || 'best'})`);
+    console.log(`Download request for ${platform}: ${targetRaw} (yt-dlp: ${ytDlpCheck.available ? ytDlpCheck.method : 'not available'}, format: ${formatId || 'best'})`);
     
     // Use yt-dlp if available
-    if (ytDlpAvailable) {
+    if (ytDlpCheck.available) {
       try {
         return await downloadWithYtDlp(targetRaw, res, platform, formatId);
       } catch (err) {
@@ -687,11 +752,11 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-const ytDlpAvailable = isYtDlpAvailable();
+const ytDlpCheck = isYtDlpAvailable();
 const ffmpegAvailable = isFFmpegAvailable();
 server.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`yt-dlp available: ${ytDlpAvailable}`);
+  console.log(`yt-dlp available: ${ytDlpCheck.available ? ytDlpCheck.method : 'not available'}`);
   console.log(`FFmpeg available: ${ffmpegAvailable}`);
   console.log('Supported platforms: YouTube, TikTok, Instagram, Facebook, Twitter/X (with yt-dlp)');
 });

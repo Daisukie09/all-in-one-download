@@ -3,9 +3,13 @@
     name: safe-video-downloader
     env: node
     plan: free
-    buildCommand: "pip install yt-dlp"
+    buildCommand: "npm install && pip install yt-dlp"
     startCommand: "node src/server.js"
     healthCheckPath: "/"
     envVars:
       - key: PORT
         value: 3000
+      - key: YTDLP_PATH
+        value: "/opt/render/projectshome/.local/bin/yt-dlp"
+      - key: PYTHON_PATH
+        value: "/usr/local/bin/python3"
