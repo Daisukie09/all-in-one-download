@@ -1,67 +1,187 @@
-﻿<!DOCTYPE html>
-<html class="light" lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service - Social Media Video Downloader</title>
-  <meta name="description" content="Terms of Service for Social Media Video Downloader" />
+  <title>Terms of Service — VORTEX Video Downloader</title>
+  <meta name="description" content="Terms of Service for VORTEX Video Downloader." />
   <link rel="canonical" href="/terms.html" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#1152d4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400..700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles.css" />
-  <!-- Shared Components (Header, Footer, Theme Toggle) -->
-  <script src="/components.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components.js"></script>
 </head>
 <body>
-  <!-- Header is loaded from components.js -->
+
+  <div class="bg-mesh"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="noise-overlay"></div>
+
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="url(#tlg1)" stroke-width="2"/>
+            <path d="M10 9l9 5-9 5V9z" fill="url(#tlg2)"/>
+            <defs>
+              <linearGradient id="tlg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+              <linearGradient id="tlg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">VORTEX</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="terms.html" class="nav-link active">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+          <span class="theme-icon moon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
 
   <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Terms of Service</h1>
-        <div class="content">
-          <p>Last updated: January 2026</p>
+    <div class="page-hero">
+      <div class="page-hero-badge">Legal</div>
+      <h1>Terms of Service</h1>
+      <p>Please read these terms carefully before using VORTEX.</p>
+    </div>
 
-          <h2>1. Acceptance of Terms</h2>
-          <p>By accessing and using Social Media Video Downloader, you accept and agree to be bound by the terms and provision of this agreement.</p>
+    <div class="content-section">
+      <div class="content-wrap">
+        <div class="last-updated-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Last Updated: January 2026
+        </div>
 
-          <h2>2. Use License</h2>
-          <p>Permission is granted to temporarily use Social Media Video Downloader for personal, non-commercial use only. This is the grant of a license, not a transfer of title.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">✅</span> 1. Acceptance of Terms</h2>
+          <p>By accessing and using VORTEX, you accept and agree to be bound by these terms. If you disagree with any part of these terms, please do not use our service.</p>
+        </div>
 
-          <h2>3. Restrictions</h2>
-          <p>You may not:</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">📜</span> 2. Use License</h2>
+          <p>Permission is granted to use VORTEX for personal, non-commercial purposes only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
           <ul>
-            <li>Modify or copy the materials</li>
-            <li>Use the materials for any commercial purpose</li>
-            <li>Transfer the materials to another person or entity</li>
-            <li>Attempt to reverse engineer any software contained on the website</li>
+            <li>Modify or copy the materials or service code</li>
+            <li>Use the service for any commercial purpose or public display</li>
+            <li>Attempt to reverse engineer any part of the service</li>
+            <li>Remove any copyright or proprietary notations</li>
           </ul>
+        </div>
 
-          <h2>4. User Responsibilities</h2>
-          <p>You are responsible for:</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">🚫</span> 3. Restrictions</h2>
+          <p>You agree not to use VORTEX to:</p>
+          <ul>
+            <li>Download content you do not have rights to access</li>
+            <li>Redistribute, sell, or commercially exploit downloaded content</li>
+            <li>Circumvent platform security or DRM measures</li>
+            <li>Overload or attack our servers with automated requests</li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2><span class="cb-icon">👤</span> 4. User Responsibilities</h2>
+          <p>You are solely responsible for:</p>
           <ul>
             <li>Ensuring you have the legal right to download any content you access</li>
-            <li>Complying with all applicable laws and regulations</li>
-            <li>Respecting the terms of service of the platforms from which you download content</li>
+            <li>Complying with all applicable laws and regulations in your jurisdiction</li>
+            <li>Respecting the terms of service of platforms you download from</li>
+            <li>Any consequences resulting from your use of this service</li>
           </ul>
+        </div>
 
-          <h2>5. Disclaimer</h2>
-          <p>The materials on Social Media Video Downloader are provided "as is". We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">⚠️</span> 5. Disclaimer</h2>
+          <p>VORTEX is provided "as is". We make no warranties, expressed or implied, and disclaim all other warranties including merchantability, fitness for a particular purpose, or non-infringement. See our <a href="disclaimer.html">full Disclaimer</a>.</p>
+        </div>
 
-          <h2>6. Limitation of Liability</h2>
-          <p>In no event shall Social Media Video Downloader be liable for any damages arising out of the use or inability to use the materials on this website.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">⚖️</span> 6. Limitation of Liability</h2>
+          <p>VORTEX and its operators shall not be liable for any damages arising out of the use or inability to use this service, including but not limited to direct, indirect, incidental, or consequential damages.</p>
+        </div>
 
-          <h2>7. Contact Information</h2>
-          <p>If you have any questions about these Terms of Service, please <a href="/contact.html">contact us</a>.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">🔄</span> 7. Modifications</h2>
+          <p>We reserve the right to modify these terms at any time. Changes take effect immediately upon posting. Continued use of VORTEX after changes constitutes acceptance of the new terms.</p>
+        </div>
+
+        <div class="content-block">
+          <h2><span class="cb-icon">✉️</span> 8. Contact</h2>
+          <p>Questions about these Terms? <a href="contact.html">Contact us here</a>.</p>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Footer is loaded from components.js -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="13" stroke="url(#tflg1)" stroke-width="2"/>
+                <path d="M10 9l9 5-9 5V9z" fill="url(#tflg2)"/>
+                <defs>
+                  <linearGradient id="tflg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                  <linearGradient id="tflg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">VORTEX</span>
+          </a>
+          <p class="footer-tagline">The fastest, safest way to download videos from any platform.</p>
+        </div>
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <span class="footer-col-title">Pages</span>
+            <a href="/" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Legal</span>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Platforms</span>
+            <span class="footer-link">YouTube</span>
+            <span class="footer-link">TikTok</span>
+            <span class="footer-link">Instagram</span>
+            <span class="footer-link">Twitter/X</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VORTEX. All rights reserved.</p>
+        <p class="footer-disclaimer">For personal use only. Respect copyright laws.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+      if (hamburger) {
+        hamburger.addEventListener('click', function(){
+          hamburger.classList.toggle('open');
+          nav.classList.toggle('open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
