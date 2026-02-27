@@ -1,58 +1,169 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Social Media Video Downloader</title>
-  <meta name="description" content="Contact Social Media Video Downloader" />
+  <title>Contact — VORTEX Video Downloader</title>
+  <meta name="description" content="Contact VORTEX for support, feedback or business inquiries." />
   <link rel="canonical" href="/contact.html" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#1152d4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400..700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles.css" />
-  <!-- Shared Components (Header, Footer, Theme Toggle) -->
-  <script src="/components.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components.js"></script>
 </head>
 <body>
-  <!-- Header is loaded from components.js -->
+
+  <div class="bg-mesh"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="noise-overlay"></div>
+
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="url(#clg1)" stroke-width="2"/>
+            <path d="M10 9l9 5-9 5V9z" fill="url(#clg2)"/>
+            <defs>
+              <linearGradient id="clg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+              <linearGradient id="clg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">VORTEX</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="terms.html" class="nav-link">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+          <span class="theme-icon moon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
 
   <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Contact Us</h1>
-        <div class="content">
-          <p>We'd love to hear from you! If you have any questions, feedback, or suggestions, please feel free to reach out to us.</p>
-          
-          <h2>Get in Touch</h2>
-          <p>For general inquiries, technical support, or business-related questions, please send us an email.</p>
-          
-          <div class="contact-info">
-            <p><strong>Email:</strong> support@videodownloader.example</p>
-            <p><strong>Response Time:</strong> We typically respond within 24-48 hours.</p>
+    <div class="page-hero">
+      <div class="page-hero-badge">Contact</div>
+      <h1>We're Here to Help</h1>
+      <p>Have a question, bug report or suggestion? Get in touch with our team.</p>
+    </div>
+
+    <div class="content-section">
+      <div class="content-wrap">
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <div class="cic-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="cic-label">Email Support</div>
+            <div class="cic-value">support@vortex.example</div>
           </div>
+          <div class="contact-info-card">
+            <div class="cic-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="cic-label">Response Time</div>
+            <div class="cic-value">Within 24–48 hours</div>
+          </div>
+        </div>
 
-          <h2>Before You Contact Us</h2>
-          <p>You might find the answer to your question in our FAQ section:</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">❓</span> Before You Contact Us</h2>
+          <p>Check these common questions first — you might find your answer instantly:</p>
           <ul>
-            <li><strong>Is this service free?</strong> Yes, our basic service is completely free to use.</li>
-            <li><strong>Do you store downloaded videos?</strong> No, we do not store any videos. All downloads are processed directly to your device.</li>
-            <li><strong>Why isn't a video downloading?</strong> Some videos may be unavailable due to regional restrictions, privacy settings, or platform changes. We recommend trying a different video or format.</li>
-            <li><strong>How do I report a bug?</strong> Please email as us with much detail as possible about the issue you're experiencing.</li>
+            <li><strong>Is VORTEX free?</strong> Yes, completely free with no hidden charges.</li>
+            <li><strong>Do you store downloaded videos?</strong> No — all downloads go directly to your device.</li>
+            <li><strong>Why isn't my video downloading?</strong> The video may be private, region-locked, or the URL may be incorrect.</li>
+            <li><strong>How do I report a bug?</strong> Email us with as much detail as possible — browser, URL, and what happened.</li>
+            <li><strong>Can I request a new platform?</strong> Yes! Send us the platform name and we'll look into adding support.</li>
           </ul>
+        </div>
 
-          <h2>Business Inquiries</h2>
-          <p>For partnership opportunities or API access inquiries, please include "Business Inquiry" in the subject line.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">💼</span> Business Inquiries</h2>
+          <p>Interested in partnering with us or need API access? Include <strong>"Business Inquiry"</strong> in your email subject line and describe your use case. We typically respond to business inquiries within 1–2 business days.</p>
+        </div>
 
-          <h2>Legal Matters</h2>
-          <p>For legal-related inquiries, please refer to our <a href="/terms.html">Terms of Use</a> and <a href="/disclaimer.html">Disclaimer</a> pages first.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">⚖️</span> Legal Matters</h2>
+          <p>For copyright or DMCA-related issues, please review our <a href="disclaimer.html">Disclaimer</a> and <a href="terms.html">Terms of Service</a> first. Include "Legal" in your subject line for faster routing.</p>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Footer is loaded from components.js -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="13" stroke="url(#cflg1)" stroke-width="2"/>
+                <path d="M10 9l9 5-9 5V9z" fill="url(#cflg2)"/>
+                <defs>
+                  <linearGradient id="cflg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                  <linearGradient id="cflg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">VORTEX</span>
+          </a>
+          <p class="footer-tagline">The fastest, safest way to download videos from any platform.</p>
+        </div>
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <span class="footer-col-title">Pages</span>
+            <a href="/" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Legal</span>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Platforms</span>
+            <span class="footer-link">YouTube</span>
+            <span class="footer-link">TikTok</span>
+            <span class="footer-link">Instagram</span>
+            <span class="footer-link">Twitter/X</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VORTEX. All rights reserved.</p>
+        <p class="footer-disclaimer">For personal use only. Respect copyright laws.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+      if (hamburger) {
+        hamburger.addEventListener('click', function(){
+          hamburger.classList.toggle('open');
+          nav.classList.toggle('open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
