@@ -1,64 +1,171 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Social Media Video Downloader</title>
-  <meta name="description" content="Learn about Social Media Video Downloader" />
+  <title>About — VORTEX Video Downloader</title>
+  <meta name="description" content="Learn about VORTEX, the fastest free video downloader." />
   <link rel="canonical" href="/about.html" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#1152d4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400..700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles.css" />
-  <!-- Shared Components (Header, Footer, Theme Toggle) -->
-  <script src="/components.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components.js"></script>
 </head>
 <body>
-  <!-- Header is loaded from components.js -->
+
+  <div class="bg-mesh"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="noise-overlay"></div>
+
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="url(#alg1)" stroke-width="2"/>
+            <path d="M10 9l9 5-9 5V9z" fill="url(#alg2)"/>
+            <defs>
+              <linearGradient id="alg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+              <linearGradient id="alg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">VORTEX</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="terms.html" class="nav-link">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+          <span class="theme-icon moon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
 
   <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">About Us</h1>
-        <div class="content">
-          <p>Welcome to <strong>Social Media Video Downloader</strong> - your trusted solution for downloading videos from all major social media platforms.</p>
-          
-          <h2>Our Mission</h2>
-          <p>Our mission is to provide a simple, fast, and reliable way for users to download videos they own or have permission to save. We believe in making digital content accessible while respecting copyright and platform terms of service.</p>
+    <div class="page-hero">
+      <div class="page-hero-badge">About Us</div>
+      <h1>Built for Speed &amp; Simplicity</h1>
+      <p>VORTEX is your go-to tool for downloading videos from any platform, fast and free.</p>
+    </div>
 
-          <h2>What We Do</h2>
-          <p>We provide a web-based tool that allows users to download videos from:</p>
+    <div class="content-section">
+      <div class="content-wrap">
+        <div class="content-block">
+          <h2><span class="cb-icon">👋</span> Welcome to VORTEX</h2>
+          <p>VORTEX is a free, fast, and reliable video downloader that supports all major social media platforms. We built this tool because downloading videos online shouldn't be complicated, slow, or hidden behind paywalls.</p>
+          <p>Whether you want to save a YouTube tutorial, a TikTok, an Instagram Reel, or any other video — VORTEX handles it in seconds.</p>
+        </div>
+
+        <div class="content-block">
+          <h2><span class="cb-icon">🎯</span> Our Mission</h2>
+          <p>Our mission is simple: give everyone free, instant access to video downloading with no friction. No sign-up required. No premium tier. No watermarks on your downloads.</p>
+          <p>We believe the internet should be open and tools should be accessible to everyone regardless of technical skill.</p>
+        </div>
+
+        <div class="content-block">
+          <h2><span class="cb-icon">📱</span> What We Support</h2>
           <ul>
-            <li><strong>YouTube</strong> - Shorts and long-form videos</li>
-            <li><strong>Instagram</strong> - Reels, posts, and stories</li>
-            <li><strong>TikTok</strong> - Videos and highlights</li>
-            <li><strong>Facebook</strong> - Videos and reels</li>
-            <li><strong>Twitter/X</strong> - Videos and media</li>
-            <li><strong>Direct URLs</strong> - Any video link</li>
+            <li><strong>YouTube</strong> — Shorts, long-form videos up to 4K</li>
+            <li><strong>TikTok</strong> — Videos without watermark</li>
+            <li><strong>Instagram</strong> — Reels, posts, IGTV</li>
+            <li><strong>Facebook</strong> — Videos and Reels</li>
+            <li><strong>Twitter/X</strong> — Videos and GIFs</li>
+            <li><strong>Direct URLs</strong> — Any .mp4 or video link</li>
           </ul>
+        </div>
 
-          <h2>Why Choose Us</h2>
+        <div class="content-block">
+          <h2><span class="cb-icon">⚡</span> Why VORTEX</h2>
           <ul>
-            <li><strong>Fast Downloads</strong> - High-speed downloads with no wait times</li>
-            <li><strong>Multiple Formats</strong> - Support for various video qualities</li>
-            <li><strong>No Installation</strong> - Works directly in your browser</li>
-            <li><strong>Regular Updates</strong> - We constantly update to work with platform changes</li>
-            <li><strong>Privacy Focused</strong> - We don't store your downloads</li>
+            <li>Lightning-fast downloads with no queue</li>
+            <li>Multiple quality options including 4K</li>
+            <li>Works on any device, any browser</li>
+            <li>Zero tracking, zero stored downloads</li>
+            <li>Constantly updated for platform changes</li>
+            <li>100% free, forever</li>
           </ul>
+        </div>
 
-          <h2>Our Technology</h2>
-          <p>We use industry-standard tools including yt-dlp for maximum compatibility with all platforms. Our service is designed to be lightweight, fast, and reliable.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">🔧</span> Our Technology</h2>
+          <p>We use yt-dlp, one of the most powerful and maintained open-source video extraction libraries available. Combined with our fast infrastructure, VORTEX delivers downloads at maximum speed.</p>
+          <p>Your downloads go directly to your device. We don't cache or store any video content on our servers.</p>
+        </div>
 
-          <h2>Contact Us</h2>
-          <p>If you have any questions, suggestions, or feedback, please don't hesitate to <a href="/contact.html">contact us</a>. We'd love to hear from you!</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">💬</span> Get in Touch</h2>
+          <p>Have questions, suggestions or found a bug? We'd love to hear from you. <a href="contact.html">Contact us here</a> and we'll get back to you within 24-48 hours.</p>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Footer is loaded from components.js -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="13" stroke="url(#fflg1)" stroke-width="2"/>
+                <path d="M10 9l9 5-9 5V9z" fill="url(#fflg2)"/>
+                <defs>
+                  <linearGradient id="fflg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                  <linearGradient id="fflg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">VORTEX</span>
+          </a>
+          <p class="footer-tagline">The fastest, safest way to download videos from any platform.</p>
+        </div>
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <span class="footer-col-title">Pages</span>
+            <a href="/" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Legal</span>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Platforms</span>
+            <span class="footer-link">YouTube</span>
+            <span class="footer-link">TikTok</span>
+            <span class="footer-link">Instagram</span>
+            <span class="footer-link">Twitter/X</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VORTEX. All rights reserved.</p>
+        <p class="footer-disclaimer">For personal use only. Respect copyright laws.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+      if (hamburger) {
+        hamburger.addEventListener('click', function(){
+          hamburger.classList.toggle('open');
+          nav.classList.toggle('open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
