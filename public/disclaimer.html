@@ -1,77 +1,182 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Disclaimer - Social Media Video Downloader</title>
-  <meta name="description" content="Disclaimer for Social Media Video Downloader" />
+  <title>Disclaimer — VORTEX Video Downloader</title>
+  <meta name="description" content="Disclaimer for VORTEX Video Downloader." />
   <link rel="canonical" href="/disclaimer.html" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#1152d4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400..700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles.css" />
-  <!-- Shared Components (Header, Footer, Theme Toggle) -->
-  <script src="/components.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components.js"></script>
 </head>
 <body>
-  <!-- Header is loaded from components.js -->
+
+  <div class="bg-mesh"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="noise-overlay"></div>
+
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="url(#dlg1)" stroke-width="2"/>
+            <path d="M10 9l9 5-9 5V9z" fill="url(#dlg2)"/>
+            <defs>
+              <linearGradient id="dlg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+              <linearGradient id="dlg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">VORTEX</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="terms.html" class="nav-link">Terms</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+          <span class="theme-icon moon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
 
   <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Disclaimer</h1>
-        <div class="content">
-          <p><strong>Last Updated: February 2026</strong></p>
-          
-          <h2>General Disclaimer</h2>
-          <p>This website and service are provided "as is" without any warranties, express or implied. We make no representations or warranties of any kind, express or implied, about the completeness, reliability, suitability, or availability of the information contained on this website.</p>
+    <div class="page-hero">
+      <div class="page-hero-badge">Legal</div>
+      <h1>Disclaimer</h1>
+      <p>Important information about the use of VORTEX and your responsibilities.</p>
+    </div>
 
-          <h2>Use at Your Own Risk</h2>
-          <p>By using this service, you acknowledge that:</p>
+    <div class="content-section">
+      <div class="content-wrap">
+        <div class="last-updated-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Last Updated: February 2026
+        </div>
+
+        <div class="content-block">
+          <h2><span class="cb-icon">⚠️</span> General Disclaimer</h2>
+          <p>VORTEX is provided "as is" without any warranties, express or implied. We make no representations about the completeness, reliability, suitability, or availability of this service.</p>
+        </div>
+
+        <div class="content-block">
+          <h2><span class="cb-icon">👤</span> Use at Your Own Risk</h2>
+          <p>By using VORTEX, you acknowledge that:</p>
           <ul>
             <li>You are responsible for ensuring you have the legal right to download any content</li>
             <li>You comply with all applicable laws and platform terms of service</li>
-            <li>Any downloads are solely your responsibility</li>
-            <li>We are not liable for any copyright infringement or legal issues</li>
+            <li>All downloads are solely your responsibility</li>
+            <li>We are not liable for any copyright infringement or legal issues arising from your use</li>
           </ul>
+        </div>
 
-          <h2>Third-Party Content</h2>
-          <p>Our service allows you to download videos from third-party platforms (YouTube, Instagram, TikTok, Facebook, Twitter/X, etc.). We do not host, own, or have any control over the content on these platforms.</p>
-          <p>Downloading copyrighted content without the owner's permission may violate copyright laws in your country. You are solely responsible for any copyright infringement.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">🌐</span> Third-Party Content</h2>
+          <p>VORTEX allows you to download videos from third-party platforms (YouTube, Instagram, TikTok, Facebook, Twitter/X, etc.). We do not host, own, or control any content on these platforms.</p>
+          <p>Downloading copyrighted content without the owner's permission may violate copyright laws in your jurisdiction. You are solely responsible for any infringement.</p>
+        </div>
 
-          <h2>Platform Terms of Service</h2>
-          <p>Using our service may violate the terms of service of the respective platforms. We recommend that you:</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">📋</span> Platform Terms of Service</h2>
+          <p>Using VORTEX may conflict with the terms of service of some platforms. We recommend:</p>
           <ul>
-            <li>Only download content you own or have permission to download</li>
-            <li>Review the terms of service of each platform before downloading</li>
-            <li>Use the content only for personal, non-commercial purposes</li>
+            <li>Only downloading content you own or have explicit permission to download</li>
+            <li>Reviewing each platform's terms of service before downloading</li>
+            <li>Using content only for personal, non-commercial purposes</li>
           </ul>
+        </div>
 
-          <h2>No Affiliation</h2>
-          <p>This service is not affiliated with, endorsed by, or in any way connected to YouTube, Instagram, TikTok, Facebook, Twitter/X, or any other third-party platform mentioned on this website.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">🚫</span> No Affiliation</h2>
+          <p>VORTEX is not affiliated with, endorsed by, or connected to YouTube, Instagram, TikTok, Facebook, Twitter/X, or any other platform mentioned on this website. All brand names and logos are property of their respective owners.</p>
+        </div>
 
-          <h2>Limitation of Liability</h2>
-          <p>In no event shall we be liable for:</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">⚖️</span> Limitation of Liability</h2>
+          <p>In no event shall VORTEX be liable for:</p>
           <ul>
             <li>Any loss or damage to your device or data</li>
             <li>Any indirect, incidental, or consequential damages</li>
             <li>Any claims arising from your use of this service</li>
             <li>Service interruptions or technical issues</li>
           </ul>
+        </div>
 
-          <h2>Changes to This Disclaimer</h2>
-          <p>We reserve the right to modify this disclaimer at any time without prior notice. Your continued use of this service constitutes acceptance of any changes.</p>
-
-          <h2>Contact</h2>
-          <p>If you have any questions about this disclaimer, please <a href="/contact.html">contact us</a>.</p>
+        <div class="content-block">
+          <h2><span class="cb-icon">🔄</span> Changes to This Disclaimer</h2>
+          <p>We reserve the right to modify this disclaimer at any time. Continued use of the service after any changes constitutes acceptance. If you have questions, <a href="contact.html">contact us</a>.</p>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Footer is loaded from components.js -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="13" stroke="url(#dflg1)" stroke-width="2"/>
+                <path d="M10 9l9 5-9 5V9z" fill="url(#dflg2)"/>
+                <defs>
+                  <linearGradient id="dflg1" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                  <linearGradient id="dflg2" x1="10" y1="9" x2="19" y2="19"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">VORTEX</span>
+          </a>
+          <p class="footer-tagline">The fastest, safest way to download videos from any platform.</p>
+        </div>
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <span class="footer-col-title">Pages</span>
+            <a href="/" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Legal</span>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Platforms</span>
+            <span class="footer-link">YouTube</span>
+            <span class="footer-link">TikTok</span>
+            <span class="footer-link">Instagram</span>
+            <span class="footer-link">Twitter/X</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VORTEX. All rights reserved.</p>
+        <p class="footer-disclaimer">For personal use only. Respect copyright laws.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+      if (hamburger) {
+        hamburger.addEventListener('click', function(){
+          hamburger.classList.toggle('open');
+          nav.classList.toggle('open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
