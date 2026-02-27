@@ -1,382 +1,895 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HD Video Downloader with Audio - Free YouTube Video Downloader | __SITE_NAME__</title>
+  <title>VORTEX — Download Any Video Free & HD</title>
   <meta name="description" content="Free HD video downloader with audio. Download YouTube, TikTok, Instagram videos in 720p, 1080p with audio. No watermark, fast and free online video downloader." />
-  <meta name="keywords" content="video downloader, HD video downloader, YouTube downloader, download YouTube videos, TikTok downloader, Instagram video downloader, Facebook video downloader, video download with audio, 720p video download, 1080p video download, free video downloader, online video downloader" />
+  <meta name="keywords" content="video downloader, HD video downloader, YouTube downloader, TikTok downloader, Instagram video downloader" />
   <link rel="canonical" href="/" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="HD Video Downloader with Audio - Free YouTube Video Downloader" />
-  <meta property="og:description" content="Download videos from YouTube, TikTok, Instagram in HD quality with audio. Fast, free and easy to use." />
+  <meta property="og:title" content="VORTEX — HD Video Downloader" />
+  <meta property="og:description" content="Download videos from YouTube, TikTok, Instagram in HD quality with audio." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/" />
-  <meta property="og:image" content="/og.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HD Video Downloader with Audio" />
-  <meta name="twitter:description" content="Free HD video downloader with audio. Download YouTube, TikTok videos in 720p, 1080p." />
-  <meta name="theme-color" content="#1152d4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "HD Video Downloader with Audio",
+    "name": "VORTEX Video Downloader",
     "url": "/",
-    "description": "Free HD video downloader with audio. Download YouTube, TikTok, Instagram videos in 720p, 1080p with audio.",
+    "description": "Free HD video downloader with audio.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "HD video download with audio",
-      "YouTube video downloader",
-      "TikTok video downloader",
-      "Instagram video downloader",
-      "720p and 1080p support",
-      "No watermark downloads"
-    ]
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
   }</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400..700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles.css" />
-  <!-- Shared Components (Header, Footer, Theme Toggle) -->
-  <script src="/components.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7001395011926411" crossorigin="anonymous"></script>
-  <script>(function(){var GA='__GA_ID__';if(GA&&GA!=='__GA_ID__'){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',GA);}})();</script>
 </head>
 <body>
-  <!-- Header is loaded from components.js -->
+
+  <div class="bg-mesh"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+  <div class="noise-overlay"></div>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="url(#lg1)" stroke-width="2"/>
+            <path d="M10 9l9 5-9 5V9z" fill="url(#lg2)"/>
+            <defs>
+              <linearGradient id="lg1" x1="0" y1="0" x2="28" y2="28">
+                <stop stop-color="#a855f7"/>
+                <stop offset="1" stop-color="#06b6d4"/>
+              </linearGradient>
+              <linearGradient id="lg2" x1="10" y1="9" x2="19" y2="19">
+                <stop stop-color="#a855f7"/>
+                <stop offset="1" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">VORTEX</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="terms.html" class="nav-link">Terms</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </span>
+          <span class="theme-icon moon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
   <main>
-    <section class="section hero">
-      <div class="container">
-        <div class="badge"><span class="material-symbols-outlined icon" aria-hidden="true">download</span> Free Online Downloader</div>
-        <h1 class="title">Download videos from all social media platforms <span class="no-watermark-badge">No Watermark</span></h1>
-        <p class="subtitle">Support for YouTube, TikTok, Instagram, Facebook, Twitter/X and more. Fast, free and easy to use. Download videos without watermark.</p>
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Free · No Registration · No Watermark</span>
+        </div>
 
-        <div class="form-wrap">
-          <form id="dl-form" class="form" autocomplete="off">
-            <div class="leading"><span class="material-symbols-outlined icon" aria-hidden="true">link</span><span class="visually-hidden">Paste URL</span></div>
-            <input id="url" name="url" type="url" required class="input" placeholder="Paste video URL (YouTube, TikTok, Instagram, Facebook, Twitter...)" />
-            <button id="download-btn" type="submit" class="btn btn-primary">
-              <span id="btn-label">Download</span>
-              <span id="btn-spinner" class="hidden material-symbols-outlined icon" aria-hidden="true">progress_activity</span>
+        <h1 class="hero-title">
+          Download Any Video
+          <span class="gradient-text">Instantly</span>
+        </h1>
+
+        <p class="hero-sub">
+          YouTube · TikTok · Instagram · Facebook · Twitter/X and more.
+          HD quality, with audio, forever free.
+        </p>
+
+        <div class="form-container">
+          <div class="form-glow"></div>
+          <form id="dl-form" class="dl-form" autocomplete="off">
+            <div class="input-wrap">
+              <div class="input-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+              </div>
+              <input
+                id="url"
+                name="url"
+                type="url"
+                required
+                class="url-input"
+                placeholder="Paste video URL here (YouTube, TikTok, Instagram...)"
+              />
+              <button type="button" class="paste-btn" id="pasteBtn" title="Paste from clipboard">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                </svg>
+              </button>
+            </div>
+            <button type="submit" class="download-btn" id="download-btn">
+              <span class="btn-content" id="btn-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Now
+              </span>
+              <span class="btn-spinner hidden" id="btn-spinner">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+                Fetching...
+              </span>
             </button>
           </form>
-          <div id="msg" class="msg" role="status" aria-live="polite"></div>
-          <div id="platform-badge" class="platform-badge hidden"></div>
-          <div id="download-progress" class="download-progress hidden">
-            <div class="progress-spinner"></div>
-            <p class="progress-text">Downloading... Please wait!</p>
-            <p class="progress-subtext">Your video is being downloaded</p>
+
+          <div id="msg" class="msg-box" role="status" aria-live="polite"></div>
+
+          <div id="platform-detected" class="platform-detected hidden">
+            <span class="platform-icon-wrap" id="platform-icon-wrap"></span>
+            <span id="platform-name-text"></span>
+            <span class="platform-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </span>
           </div>
-          
-          <!-- Video Preview Card -->
+
           <div id="video-preview" class="video-preview hidden">
-            <div class="preview-card">
-              <div class="preview-thumbnail">
-                <img id="preview-img" src="" alt="Video thumbnail" />
-                <span id="preview-duration" class="preview-duration"></span>
+            <div class="preview-inner">
+              <div class="preview-thumb-wrap">
+                <img id="preview-img" src="" alt="Thumbnail" class="preview-thumb" />
+                <span id="preview-duration" class="duration-badge"></span>
+                <div class="thumb-overlay">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
               </div>
-              <div class="preview-info">
+              <div class="preview-details">
+                <div class="preview-meta-top">
+                  <span class="preview-platform-badge" id="preview-platform"></span>
+                </div>
                 <h3 id="preview-title" class="preview-title"></h3>
                 <p id="preview-uploader" class="preview-uploader"></p>
-                <div class="quality-select-wrap">
-                  <label for="quality-select">Select Quality:</label>
-                  <select id="quality-select" class="quality-select">
-                    <option value="">Loading...</option>
-                  </select>
+                <div class="quality-section">
+                  <label class="quality-label">Select Quality</label>
+                  <div class="quality-grid" id="quality-grid"></div>
                 </div>
-                <button id="preview-download-btn" class="btn btn-primary preview-download-btn">
-                  <span class="material-symbols-outlined icon" aria-hidden="true">download</span>
-                  Download
+                <button id="preview-download-btn" class="preview-dl-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  <span>Download Selected</span>
                 </button>
               </div>
             </div>
           </div>
-          
-          <p class="hint">By using this tool you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>.</p>
+
+          <div id="download-progress" class="dl-progress hidden">
+            <div class="progress-ring-wrap">
+              <svg class="progress-ring" width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="rgba(168,85,247,0.2)" stroke-width="4"/>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="url(#pgrd)" stroke-width="4"
+                  stroke-dasharray="157" stroke-dashoffset="157" stroke-linecap="round" class="progress-arc" id="progressArc"/>
+                <defs>
+                  <linearGradient id="pgrd" x1="0" y1="0" x2="60" y2="60">
+                    <stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="progress-pct" id="progressPct">0%</span>
+            </div>
+            <div class="progress-text-wrap">
+              <p class="progress-title">Downloading your video</p>
+              <p class="progress-sub">Please wait, this may take a moment...</p>
+            </div>
+          </div>
+
+          <p class="terms-note">
+            By using VORTEX you agree to our
+            <a href="terms.html">Terms</a> &amp; <a href="privacy.html">Privacy Policy</a>.
+          </p>
         </div>
 
-        <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">10M+</span>
+            <span class="stat-label">Videos Downloaded</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">50+</span>
+            <span class="stat-label">Platforms</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">4K</span>
+            <span class="stat-label">Max Quality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <div class="fc-icon youtube-color">▶</div>
+          <div class="fc-info">
+            <span class="fc-name">YouTube</span>
+            <span class="fc-quality">up to 4K</span>
+          </div>
+          <div class="fc-check">✓</div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="fc-icon tiktok-color">♪</div>
+          <div class="fc-info">
+            <span class="fc-name">TikTok</span>
+            <span class="fc-quality">No watermark</span>
+          </div>
+          <div class="fc-check">✓</div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="fc-icon insta-color">◎</div>
+          <div class="fc-info">
+            <span class="fc-name">Instagram</span>
+            <span class="fc-quality">Reels & Posts</span>
+          </div>
+          <div class="fc-check">✓</div>
+        </div>
+        <div class="floating-card card-4">
+          <div class="fc-icon twitter-color">𝕏</div>
+          <div class="fc-info">
+            <span class="fc-name">Twitter/X</span>
+            <span class="fc-quality">HD Videos</span>
+          </div>
+          <div class="fc-check">✓</div>
+        </div>
+        <div class="visual-center">
+          <div class="vc-ring ring-outer"></div>
+          <div class="vc-ring ring-mid"></div>
+          <div class="vc-ring ring-inner"></div>
+          <div class="vc-core">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="supported-platforms" class="section platforms">
+    <section class="platforms-section">
       <div class="container">
-        <h2 class="section-title">Supported Platforms</h2>
+        <div class="section-header">
+          <div class="section-tag">Platforms</div>
+          <h2 class="section-title">Works With Everything</h2>
+          <p class="section-sub">Download from all your favorite platforms with one click</p>
+        </div>
         <div class="platform-grid">
-          <div class="platform-card">
-            <span class="platform-icon youtube">▶</span>
-            <span class="platform-name">YouTube</span>
-            <span class="platform-label">Shorts & Long</span>
+          <div class="platform-card" data-platform="youtube">
+            <div class="pc-bg"></div>
+            <div class="pc-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/>
+              </svg>
+            </div>
+            <div class="pc-info">
+              <span class="pc-name">YouTube</span>
+              <span class="pc-desc">Shorts & Long videos</span>
+            </div>
+            <div class="pc-badge">4K</div>
           </div>
-          <div class="platform-card">
-            <span class="platform-icon tiktok">♪</span>
-            <span class="platform-name">TikTok</span>
-            <span class="platform-label">Videos</span>
+          <div class="platform-card" data-platform="tiktok">
+            <div class="pc-bg"></div>
+            <div class="pc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+              </svg>
+            </div>
+            <div class="pc-info">
+              <span class="pc-name">TikTok</span>
+              <span class="pc-desc">No watermark</span>
+            </div>
+            <div class="pc-badge">HD</div>
           </div>
-          <div class="platform-card">
-            <span class="platform-icon instagram">◎</span>
-            <span class="platform-name">Instagram</span>
-            <span class="platform-label">Reels & Posts</span>
+          <div class="platform-card" data-platform="instagram">
+            <div class="pc-bg"></div>
+            <div class="pc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <div class="pc-info">
+              <span class="pc-name">Instagram</span>
+              <span class="pc-desc">Reels & Posts</span>
+            </div>
+            <div class="pc-badge">HD</div>
           </div>
-          <div class="platform-card">
-            <span class="platform-icon facebook">f</span>
-            <span class="platform-name">Facebook</span>
-            <span class="platform-label">Videos</span>
+          <div class="platform-card" data-platform="facebook">
+            <div class="pc-bg"></div>
+            <div class="pc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+            <div class="pc-info">
+              <span class="pc-name">Facebook</span>
+              <span class="pc-desc">Videos & Reels</span>
+            </div>
+            <div class="pc-badge">HD</div>
           </div>
-          <div class="platform-card">
-            <span class="platform-icon twitter">𝕏</span>
-            <span class="platform-name">Twitter/X</span>
-            <span class="platform-label">Videos</span>
+          <div class="platform-card" data-platform="twitter">
+            <div class="pc-bg"></div>
+            <div class="pc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </div>
+            <div class="pc-info">
+              <span class="pc-name">Twitter/X</span>
+              <span class="pc-desc">Videos & GIFs</span>
+            </div>
+            <div class="pc-badge">HD</div>
           </div>
-          <div class="platform-card">
-            <span class="platform-icon direct">⬇</span>
-            <span class="platform-name">Direct URL</span>
-            <span class="platform-label">Any Link</span>
+          <div class="platform-card" data-platform="direct">
+            <div class="pc-bg"></div>
+            <div class="pc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="pc-info">
+              <span class="pc-name">Direct URL</span>
+              <span class="pc-desc">Any video link</span>
+            </div>
+            <div class="pc-badge">ALL</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="how-it-works" class="section how-it-works">
+    <section class="features-section">
       <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Copy Video URL</h3>
-              <p>Copy the video link from YouTube, TikTok, Instagram, Facebook, Twitter or any supported platform.</p>
+        <div class="section-header">
+          <div class="section-tag">Features</div>
+          <h2 class="section-title">Why Choose VORTEX</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card feat-large">
+            <div class="feat-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3>Lightning Fast</h3>
+            <p>Downloads start in seconds. Our servers are optimized for maximum speed with zero queuing.</p>
+            <div class="feat-decoration"></div>
+          </div>
+          <div class="feature-card">
+            <div class="feat-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/>
+              </svg>
+            </div>
+            <h3>No Watermark</h3>
+            <p>Clean downloads without any watermarks.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feat-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>100% Safe</h3>
+            <p>No malware, no trackers. We respect your privacy.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feat-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 6-6"/>
+              </svg>
+            </div>
+            <h3>HD Quality</h3>
+            <p>Up to 4K resolution with full audio.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feat-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/>
+              </svg>
+            </div>
+            <h3>Mobile Ready</h3>
+            <p>Works perfectly on any device anywhere.</p>
+          </div>
+          <div class="feature-card feat-large feat-right">
+            <div class="feat-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <h3>Always Free</h3>
+            <p>No subscription, no payment, no limits. Download unlimited videos completely free forever.</p>
+            <div class="feat-decoration feat-decoration-right"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">How It Works</div>
+          <h2 class="section-title">3 Simple Steps</h2>
+          <p class="section-sub">Get your video in under 10 seconds</p>
+        </div>
+        <div class="steps-wrap">
+          <div class="steps-line"></div>
+          <div class="step-item">
+            <div class="step-bubble">
+              <span class="step-num">01</span>
+              <div class="step-pulse"></div>
+            </div>
+            <div class="step-card">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+              </div>
+              <h3>Copy the URL</h3>
+              <p>Open the video on any platform and copy the link from your browser or app.</p>
             </div>
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Paste URL</h3>
-              <p>Paste the video URL into the input box above and click Download.</p>
+          <div class="step-item">
+            <div class="step-bubble">
+              <span class="step-num">02</span>
+              <div class="step-pulse"></div>
+            </div>
+            <div class="step-card">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                </svg>
+              </div>
+              <h3>Paste & Fetch</h3>
+              <p>Paste the URL into VORTEX and click Download. We'll fetch all available qualities.</p>
             </div>
           </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Download Video</h3>
-              <p>Your video will be downloaded directly to your device. Fast and free!</p>
+          <div class="step-item">
+            <div class="step-bubble">
+              <span class="step-num">03</span>
+              <div class="step-pulse"></div>
             </div>
+            <div class="step-card">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </div>
+              <h3>Download & Enjoy</h3>
+              <p>Choose your quality and download directly to your device. That's it!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">FAQ</div>
+          <h2 class="section-title">Common Questions</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Is VORTEX completely free?</span>
+              <span class="faq-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-a">
+              <p>Yes, 100% free. No sign-up, no subscription, no hidden fees. Download as many videos as you want.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Do you store my downloaded videos?</span>
+              <span class="faq-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-a">
+              <p>No. All downloads are processed directly to your device. We don't save or cache any video content on our servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Why isn't my video downloading?</span>
+              <span class="faq-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-a">
+              <p>Some videos may be private, region-locked, or protected by the platform. Try a different video or check the URL is correct.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What video quality can I download?</span>
+              <span class="faq-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-a">
+              <p>We support up to 4K resolution. All available qualities are shown after you paste the URL so you can choose.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-bg-orb"></div>
+          <div class="cta-content">
+            <h2>Ready to Download?</h2>
+            <p>Join millions of users who trust VORTEX for their video downloads.</p>
+            <a href="#" class="cta-btn" onclick="document.getElementById('url').focus(); return false;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Start Downloading Free
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer is loaded from components.js -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="13" stroke="url(#flg1)" stroke-width="2"/>
+                <path d="M10 9l9 5-9 5V9z" fill="url(#flg2)"/>
+                <defs>
+                  <linearGradient id="flg1" x1="0" y1="0" x2="28" y2="28">
+                    <stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/>
+                  </linearGradient>
+                  <linearGradient id="flg2" x1="10" y1="9" x2="19" y2="19">
+                    <stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">VORTEX</span>
+          </a>
+          <p class="footer-tagline">The fastest, safest way to download videos from any platform.</p>
+        </div>
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <span class="footer-col-title">Pages</span>
+            <a href="/" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Legal</span>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Platforms</span>
+            <span class="footer-link">YouTube</span>
+            <span class="footer-link">TikTok</span>
+            <span class="footer-link">Instagram</span>
+            <span class="footer-link">Twitter/X</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VORTEX. All rights reserved.</p>
+        <p class="footer-disclaimer">For personal use only. Respect copyright laws.</p>
+      </div>
+    </div>
+  </footer>
 
-  <!-- Page-specific JavaScript for download form -->
+  <script src="components.js"></script>
   <script>
   (function(){
     const form = document.getElementById('dl-form');
     const msg = document.getElementById('msg');
-    const platformBadge = document.getElementById('platform-badge');
-    const downloadProgress = document.getElementById('download-progress');
     const videoPreview = document.getElementById('video-preview');
+    const dlProgress = document.getElementById('download-progress');
     const btn = document.getElementById('download-btn');
-    const label = document.getElementById('btn-label');
-    const spinner = document.getElementById('btn-spinner');
-
-    const platformNames = {
-      youtube: 'YouTube',
-      tiktok: 'TikTok',
-      instagram: 'Instagram',
-      facebook: 'Facebook',
-      twitter: 'Twitter/X',
-      snapchat: 'Snapchat',
-      reddit: 'Reddit',
-      pinterest: 'Pinterest',
-      linkedin: 'LinkedIn',
-      direct: 'Direct URL'
-    };
-
-    const platformColors = {
-      youtube: '#FF0000',
-      tiktok: '#00f2ea',
-      instagram: '#E1306C',
-      facebook: '#4267B2',
-      twitter: '#1DA1F2',
-      snapchat: '#FFFC00',
-      reddit: '#FF5700',
-      pinterest: '#BD081C',
-      linkedin: '#0077B5',
-      direct: '#1152d4'
-    };
-
+    const btnLabel = document.getElementById('btn-label');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const platformDetected = document.getElementById('platform-detected');
+    const progressArc = document.getElementById('progressArc');
+    const progressPct = document.getElementById('progressPct');
     let currentUrl = '';
     let videoInfo = null;
+    let selectedFormatId = '';
 
-async function getVideoInfo(url){
+    const platformMap = {
+      'youtube.com': { name: 'YouTube', color: '#FF0000' },
+      'youtu.be': { name: 'YouTube', color: '#FF0000' },
+      'tiktok.com': { name: 'TikTok', color: '#00f2ea' },
+      'instagram.com': { name: 'Instagram', color: '#E1306C' },
+      'facebook.com': { name: 'Facebook', color: '#4267B2' },
+      'fb.watch': { name: 'Facebook', color: '#4267B2' },
+      'twitter.com': { name: 'Twitter/X', color: '#1DA1F2' },
+      'x.com': { name: 'Twitter/X', color: '#1DA1F2' }
+    };
+
+    document.getElementById('pasteBtn').addEventListener('click', async function(){
+      try {
+        const text = await navigator.clipboard.readText();
+        document.getElementById('url').value = text;
+        detectPlatform(text);
+        showMsg('URL pasted!', 'success');
+      } catch(e) {
+        showMsg('Please paste manually (Ctrl+V)', 'info');
+      }
+    });
+
+    document.getElementById('url').addEventListener('input', function(){
+      detectPlatform(this.value);
+    });
+
+    function detectPlatform(url){
+      if (!url) { platformDetected.classList.add('hidden'); return; }
+      try {
+        const u = new URL(url);
+        const host = u.hostname.replace('www.', '');
+        for (const [key, val] of Object.entries(platformMap)) {
+          if (host.includes(key)) {
+            document.getElementById('platform-icon-wrap').textContent = val.name[0];
+            document.getElementById('platform-icon-wrap').style.background = val.color;
+            document.getElementById('platform-name-text').textContent = val.name + ' detected';
+            platformDetected.classList.remove('hidden');
+            return;
+          }
+        }
+        document.getElementById('platform-icon-wrap').textContent = '↓';
+        document.getElementById('platform-icon-wrap').style.background = '#6366f1';
+        document.getElementById('platform-name-text').textContent = 'Direct URL detected';
+        platformDetected.classList.remove('hidden');
+      } catch(e) {
+        platformDetected.classList.add('hidden');
+      }
+    }
+
+    function showMsg(text, type){
+      msg.textContent = text;
+      msg.className = 'msg-box msg-' + (type || 'info');
+      msg.classList.remove('hidden');
+    }
+
+    function hideMsg(){
+      msg.classList.add('hidden');
+      msg.className = 'msg-box';
+    }
+
+    function formatTime(s){
+      if (!s) return '';
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return m + ':' + String(sec).padStart(2,'0');
+    }
+
+    function formatSize(b){
+      if (!b) return '';
+      const mb = b / (1024*1024);
+      return mb >= 1 ? mb.toFixed(1) + ' MB' : (b/1024).toFixed(0) + ' KB';
+    }
+
+    function animateProgress(){
+      let p = 0;
+      const totalDash = 157;
+      const interval = setInterval(function(){
+        p += Math.random() * 8 + 2;
+        if (p > 90) p = 90;
+        const offset = totalDash - (totalDash * p / 100);
+        if (progressArc) progressArc.style.strokeDashoffset = offset;
+        if (progressPct) progressPct.textContent = Math.floor(p) + '%';
+        if (p >= 90) clearInterval(interval);
+      }, 200);
+      return interval;
+    }
+
+    function finishProgress(){
+      if (progressArc) progressArc.style.strokeDashoffset = 0;
+      if (progressPct) progressPct.textContent = '100%';
+    }
+
+    async function getVideoInfo(url){
       try {
         const r = await fetch('/api/info?url=' + encodeURIComponent(url));
-        const contentType = r.headers.get('content-type');
-        
-        if (!contentType || !contentType.includes('application/json')) {
-          const text = await r.text();
-          console.error('Server returned non-JSON response:', text);
-          return { 
-            ok: false, 
-            error: 'Server error: Invalid response',
-            detail: 'yt-dlp may not be installed. Please check server logs.',
-            hint: 'Install yt-dlp: pip install yt-dlp'
-          };
+        const ct = r.headers.get('content-type');
+        if (!ct || !ct.includes('application/json')) {
+          return { ok: false, error: 'Server error. Please try again.' };
         }
-        
-        const data = await r.json();
-        
-        if (!data.ok && data.hint) {
-          data.error = data.error + '. ' + data.hint;
-        }
-        
-        return data;
-      } catch (err) {
-        console.error('Fetch error:', err);
-        return { 
-          ok: false, 
-          error: 'Network error: Could not connect to server',
-          detail: err.message
-        };
+        return await r.json();
+      } catch(e) {
+        return { ok: false, error: 'Network error: ' + e.message };
       }
     }
 
-    function formatDuration(seconds) {
-      if (!seconds) return '';
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
-      return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-
-    function formatFileSize(bytes) {
-      if (!bytes) return '';
-      const mb = bytes / (1024 * 1024);
-      if (mb >= 1) return `${mb.toFixed(1)} MB`;
-      const kb = bytes / 1024;
-      return `${kb.toFixed(1)} KB`;
-    }
-
-    function showVideoPreview(info) {
-      videoInfo = info;
-      const previewImg = document.getElementById('preview-img');
-      const previewDuration = document.getElementById('preview-duration');
-      const previewTitle = document.getElementById('preview-title');
-      const previewUploader = document.getElementById('preview-uploader');
-      const qualitySelect = document.getElementById('quality-select');
-      
-      previewImg.src = info.thumbnail || '';
-      previewDuration.textContent = formatDuration(info.duration);
-      previewTitle.textContent = info.title || 'Untitled';
-      previewUploader.textContent = info.uploader || '';
-      
-      qualitySelect.innerHTML = '';
-      if (info.availableQualities && info.availableQualities.length > 0) {
-        info.availableQualities.forEach((q, index) => {
-          const option = document.createElement('option');
-          option.value = q.format_id;
-          option.textContent = `${q.quality} (${q.ext}) - ${formatFileSize(q.filesize)}`;
-          if (index === 0) option.selected = true;
-          qualitySelect.appendChild(option);
+    function buildQualityGrid(qualities){
+      const grid = document.getElementById('quality-grid');
+      grid.innerHTML = '';
+      if (qualities && qualities.length > 0) {
+        qualities.forEach(function(q, i){
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'quality-chip' + (i === 0 ? ' selected' : '');
+          btn.dataset.formatId = q.format_id;
+          btn.innerHTML = '<span class="qc-quality">' + q.quality + '</span>' +
+            '<span class="qc-ext">' + q.ext + '</span>' +
+            (q.filesize ? '<span class="qc-size">' + formatSize(q.filesize) + '</span>' : '');
+          if (i === 0) selectedFormatId = q.format_id;
+          btn.addEventListener('click', function(){
+            grid.querySelectorAll('.quality-chip').forEach(function(b){ b.classList.remove('selected'); });
+            this.classList.add('selected');
+            selectedFormatId = this.dataset.formatId;
+          });
+          grid.appendChild(btn);
         });
       } else {
-        const option = document.createElement('option');
-        option.value = '';
-        option.textContent = 'Best Quality (Auto)';
-        qualitySelect.appendChild(option);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'quality-chip selected';
+        btn.dataset.formatId = '';
+        btn.innerHTML = '<span class="qc-quality">Best</span><span class="qc-ext">Auto</span>';
+        selectedFormatId = '';
+        grid.appendChild(btn);
       }
-      
-      videoPreview.classList.remove('hidden');
-      downloadProgress.classList.add('hidden');
-      platformBadge.classList.add('hidden');
-      msg.classList.add('hidden');
     }
 
-    document.getElementById('preview-download-btn').addEventListener('click', function() {
-      if (!currentUrl || !videoInfo) return;
-      
-      const qualitySelect = document.getElementById('quality-select');
-      const formatId = qualitySelect.value;
-      
-      let downloadUrl = '/api/download?url=' + encodeURIComponent(currentUrl);
-      if (formatId) {
-        downloadUrl += '&format_id=' + encodeURIComponent(formatId);
+    function showPreview(info){
+      videoInfo = info;
+      document.getElementById('preview-img').src = info.thumbnail || '';
+      document.getElementById('preview-duration').textContent = formatTime(info.duration);
+      document.getElementById('preview-title').textContent = info.title || 'Untitled Video';
+      document.getElementById('preview-uploader').textContent = info.uploader || '';
+      const platEl = document.getElementById('preview-platform');
+      if (info.extractor) {
+        platEl.textContent = info.extractor;
+        platEl.style.display = 'inline-flex';
       }
-      
-      downloadProgress.classList.remove('hidden');
+      buildQualityGrid(info.availableQualities);
+      videoPreview.classList.remove('hidden');
+      dlProgress.classList.add('hidden');
+      hideMsg();
+    }
+
+    document.getElementById('preview-download-btn').addEventListener('click', function(){
+      if (!currentUrl) return;
+      let dlUrl = '/api/download?url=' + encodeURIComponent(currentUrl);
+      if (selectedFormatId) dlUrl += '&format_id=' + encodeURIComponent(selectedFormatId);
       videoPreview.classList.add('hidden');
-      
-      const progressText = downloadProgress.querySelector('.progress-text');
-      const progressSubtext = downloadProgress.querySelector('.progress-subtext');
-      progressText.textContent = 'Download Started!';
-      progressText.style.color = '#22c55e';
-      progressSubtext.textContent = 'Your video is being downloaded. Check your downloads folder.';
-      
-      window.location.href = downloadUrl;
-      
-      setTimeout(function() {
-        downloadProgress.classList.add('hidden');
-        msg.classList.remove('hidden');
-        msg.textContent = 'Download complete! Check your downloads folder.';
-        msg.style.color = '#22c55e';
-        msg.style.backgroundColor = '#dcfce7';
-        msg.style.padding = '12px';
-        msg.style.borderRadius = '8px';
+      dlProgress.classList.remove('hidden');
+      const intv = animateProgress();
+      window.location.href = dlUrl;
+      setTimeout(function(){
+        clearInterval(intv);
+        finishProgress();
+        setTimeout(function(){
+          dlProgress.classList.add('hidden');
+          showMsg('Download complete! Check your Downloads folder.', 'success');
+        }, 800);
       }, 5000);
     });
 
-    if (form){
+    if (form) {
       form.addEventListener('submit', async function(e){
         e.preventDefault();
-        currentUrl = new FormData(form).get('url');
-        
-        msg.textContent = 'Getting video info...';
-        platformBadge.classList.add('hidden');
+        currentUrl = document.getElementById('url').value.trim();
+        if (!currentUrl) return;
+        try {
+          const u = new URL(currentUrl);
+          if (!/^https?:$/.test(u.protocol)) throw new Error();
+        } catch {
+          showMsg('Please enter a valid URL starting with https://', 'error');
+          return;
+        }
         videoPreview.classList.add('hidden');
-        
-        try{ 
-          const u = new URL(currentUrl); 
-          if (!/^https?:$/.test(u.protocol)) throw new Error(); 
-        } catch { 
-          msg.textContent = 'Invalid URL'; 
-          return; 
-        }
-        
-        btn.disabled = true; 
-        label.classList.add('hidden'); 
-        spinner.classList.remove('hidden');
-        
-        try{
+        dlProgress.classList.add('hidden');
+        btn.disabled = true;
+        btnLabel.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+        showMsg('Fetching video info...', 'info');
+        try {
           const info = await getVideoInfo(currentUrl);
-          
-          if (!info.ok){
-            msg.textContent = info.error || 'Failed to get video info';
+          if (!info.ok) {
+            showMsg(info.error || 'Failed to get video info. Try another URL.', 'error');
           } else {
-            showVideoPreview(info);
+            showPreview(info);
           }
-        } catch(err){
-          msg.textContent = 'Error: ' + (err.message || 'Unexpected error. Try again.'); 
-        }
-        finally{ 
-          setTimeout(()=>{ 
-            btn.disabled = false; 
-            label.classList.remove('hidden'); 
-            spinner.classList.add('hidden'); 
-          }, 3000); 
+        } catch(err) {
+          showMsg('Error: ' + (err.message || 'Unexpected error'), 'error');
+        } finally {
+          setTimeout(function(){
+            btn.disabled = false;
+            btnLabel.classList.remove('hidden');
+            btnSpinner.classList.add('hidden');
+          }, 2000);
         }
       });
     }
 
-    try { if (window.adsbygoogle) { (adsbygoogle = window.adsbygoogle || []).push({}); } } catch(_) {}
+    const faqBtns = document.querySelectorAll('.faq-q');
+    faqBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        faqBtns.forEach(function(b){ b.setAttribute('aria-expanded','false'); b.closest('.faq-item').classList.remove('open'); });
+        if (!expanded) {
+          this.setAttribute('aria-expanded','true');
+          this.closest('.faq-item').classList.add('open');
+        }
+      });
+    });
+
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function(){
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    if (hamburger) {
+      hamburger.addEventListener('click', function(){
+        hamburger.classList.toggle('open');
+        nav.classList.toggle('open');
+      });
+    }
   })();
   </script>
 </body>
